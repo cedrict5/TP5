@@ -11,7 +11,12 @@ final class AccueilController extends AbstractController
     #[Route('/accueil', name: 'accueil')]
     public function index(): Response
     {
-        return $this->render('accueil/index.html.twig');
+        $noms=["Cédric","Jovan","Vladilen","Axel"];
+        $age=17;
+        return $this->render('accueil/index.html.twig',[
+            'lesNoms' => $noms,
+            'age' => $age
+        ]);
     }
 
 }

@@ -4,4 +4,18 @@
 
 {% block body %}
 <h1 class="pt-5">Bienvenue</h1>
+
+<ul>
+{% for leNom in lesNoms %}
+    <li> {{leNom|upper}} </li>
+{% endfor %} 
+
+
+
+{% if age>18 %}
+    vous etes majeur !
+{% else %}
+    vous etes mineur !
+{% endif %}
+</ul>
 {% endblock %}

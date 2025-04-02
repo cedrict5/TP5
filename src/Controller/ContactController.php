@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 final class ContactController extends AbstractController
 {
     #[Route('/contacts', name: 'contacts', methods: ['GET'])]
-    public function listeContact(ContactRepository $repo)
+    public function listeContacts(ContactRepository $repo)
     {   
         $Contacts=$repo->findAll();
         return $this->render('contact/listeContacts.html.twig',['lesContacts'=> $Contacts]);

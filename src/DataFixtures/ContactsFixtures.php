@@ -19,19 +19,19 @@ class ContactsFixtures extends Fixture
         $categorie = new Categorie();
         $categorie  ->setLibelle("Professionnel")
                     ->setDescription($faker->sentence(50))
-                    ->setImage("https://picsum.photos/id/1/367/267");
+                    ->setImage("images/categories/professionnel.jpg");
         $manager->persist($categorie);
 
         $categorie = new Categorie();
         $categorie  ->setLibelle("Sports")
                     ->setDescription($faker->sentence(50))
-                    ->setImage("https://picsum.photos/id/157/367/267");
+                    ->setImage("images/categories/sports.jpg");
         $manager->persist($categorie);
 
         $categorie = new Categorie();
         $categorie  ->setLibelle("Privée")
                     ->setDescription($faker->sentence(50))
-                    ->setImage("https://picsum.photos/id/160/367/267");
+                    ->setImage("images/categories/prive.jpg");
         $manager->persist($categorie);
 
         $genres=["male","female"];

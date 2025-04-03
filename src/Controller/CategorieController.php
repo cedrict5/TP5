@@ -2,10 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Categorie;
 use App\Repository\CategorieRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 final class CategorieController extends AbstractController
 {
@@ -18,12 +19,11 @@ final class CategorieController extends AbstractController
         ]);
     }
 
-    #[Route('/categories/{$id}', name: 'ficheCategorie',methods:['GET'])]
-    public function lafficheCategories(CategorieRepository $repo)
+    #[Route('/categories/{id}', name: 'ficheCategorie',methods:['GET'])]
+    public function lafficheCategories(Categorie $categorie)
     {
-        $categories= $repo->findAll();
         return $this->render('categorie/ficheCategorie.html.twig', [
-            'laCategorie' => $categories
+            'laCategorie' => $categorie
         ]);
     }
 }

@@ -31,9 +31,9 @@ class ContactsFixtures extends Fixture
         $manager->persist($categorie);
         $categories[] = $categorie;
         $categorie = new Categorie();
-        $categorie  ->setLibelle("Privée")
+        $categorie  ->setLibelle("Privé")
                     ->setDescription($faker->sentence(50))
-                    ->setImage("images/categories/prive.jpg");
+                    ->setImage("images/categories/prive.png");
         $manager->persist($categorie);
         $categories[] = $categorie;
         

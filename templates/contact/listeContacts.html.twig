@@ -3,7 +3,7 @@
 {% block title %}Liste des contacts{% endblock %}
 
 {% block body %}
-Bonjour !
+
 <h1 class="text-center pt-2">Liste des contacts</h1>
 
 <div class="row">
@@ -25,6 +25,7 @@ Bonjour !
                     <span class="badge badge-info">femme</span>
                 {% endif %}
                 </li>
+                <li class="list-group-item"><a href="{{path('afficheCategorie', {'id': leContact.categorie.id})}}">{{ leContact.categorie.libelle}}</a></li>
             </ul>
             <div class="card-body">
                 <a href="{{path('ficheContact',{'id': leContact.id })}}" class="btn btn-success btn-block text-center">Détail...</a>

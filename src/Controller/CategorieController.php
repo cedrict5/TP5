@@ -19,11 +19,20 @@ final class CategorieController extends AbstractController
         ]);
     }
 
-    #[Route('/categories/{id}', name: 'ficheCategorie',methods:['GET'])]
+    #[Route('/categories/{id<\d+>}', name: 'ficheCategorie',methods:['GET'])]
     public function lafficheCategories(Categorie $categorie)
     {
         return $this->render('categorie/ficheCategorie.html.twig', [
             'laCategorie' => $categorie
+        ]);
+    }
+
+    #[Route('/categories/nbContactsParCat', name: 'nbContactsParCat',methods:['GET'])]
+    public function nbContactsParCat(CategorieRepository $repo)
+    {
+        $categories= $repo->nbContactsParCat();
+        return $this->render('categorie/nbContactsParCat.html.twig', [
+            'lesCategories' => $categories
         ]);
     }
 }
